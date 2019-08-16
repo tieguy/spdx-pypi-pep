@@ -21,23 +21,27 @@ This PEP describes the changes between versions 2.1 and 2.2 of the core
 metadata specification for Python packages. Version 2.1 is specified in PEP
 566.
 
-The key and only change introduced in this PEP is how license is documented in
-package metadata.
+The key and only change introduced in this PEP is how a package's license is 
+documented in package metadata.
 
-Software is licensed and providing accurate licensing information to Python
-packages users is an important matter.  Yet, license metadata are limited often
-leading to some confusion. 
+Software is always licensed in some way, and providing accurate information 
+about those license choices to Python package users is an important part of 
+helping those users assess their own legal situation. However, the existing 
+license metadata specification has important limitations that lead to 
+confusion at best and very inaccurate license data at worst. 
 
-- There are two overlapping places where a license can be documented leading to
-  confusion for packagers: license-related `Classifiers` and the `License`
-  attribute.
+In particular:
 
-- Furthermore, it is difficult to convey anything but simple licensing using
-  these two fields. License information expressiveness and clarity when creating
-  packages will help packagers and users alike.
+- There are two separate fields where a license can be documented, leading 
+  to confusion for packagers and license analyzers: license-related 
+  `Classifiers` and the `License` attribute.
 
-License expressions provide a better way to express the license of a
-distribution using a well defined syntax and well known license ids from SPDX.
+- The existing fields assume fairly simple licensing practices, and support 
+  only a subset of the many open source licenses. 
+
+[License expressions](https://spdx.github.io/spdx-spec/appendix-IV-SPDX-license-expressions/) 
+provide a better way to express a package's license, with a well defined 
+syntax and well known license ids from SPDX.
 
 This PEP was started based on several discussions and in particular:
 
